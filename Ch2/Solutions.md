@@ -111,7 +111,7 @@ All CUDA runtime API calls return an error code of type `cudaError_t`.
 
 ---
 
-### Exercise 9 — CUDA Kernel Analysis
+### 9. CUDA Kernel Analysis
 
 #### Kernel Code
 ```cpp
@@ -146,7 +146,7 @@ e. What is the number of threads that execute the code on line 04?
 
 __200,000__ ( because i < N )
 
-### Exercise 10
+### 10.
 
 The intern can avoid duplication by declaring with
 ```
