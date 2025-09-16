@@ -8,7 +8,7 @@ If we want to use each thread in a grid to calculate one output element of a vec
 
 - (A) `i = threadIdx.x + threadIdx.y;`
 - (B) `i = blockIdx.x + threadIdx.x;`
-- **✅ (C) `i = blockIdx.x * blockDim.x + threadIdx.x;`**
+- **(C) `i = blockIdx.x * blockDim.x + threadIdx.x;`**
 - (D) `i = blockIdx.x * threadIdx.x;`
 
 **Explanation:**  
@@ -21,7 +21,7 @@ Assume that we want to use each thread to calculate two adjacent elements of a v
 
 - (A) `i = blockIdx.x * blockDim.x + threadIdx.x + 2;`
 - (B) `i = blockIdx.x * threadIdx.x * 2;`
-- **✅ (C) `i = (blockIdx.x * blockDim.x + threadIdx.x) * 2;`**
+- **(C) `i = (blockIdx.x * blockDim.x + threadIdx.x) * 2;`**
 - (D) `i = blockIdx.x * blockDim.x * 2 + threadIdx.x;`
 
 **Explanation:**  
@@ -35,11 +35,12 @@ We want to use each thread to calculate two elements of a vector addition. Each 
 
 - (A) `i = blockIdx.x * blockDim.x + threadIdx.x + 2;`
 - (B) `i = blockIdx.x * threadIdx.x * 2;`
-- **✅ (C) `i = (blockIdx.x * blockDim.x + threadIdx.x) * 2;`**
+- **(C) `i = (blockIdx.x * blockDim.x + threadIdx.x) * 2;`**
 - (D) `i = blockIdx.x * blockDim.x * 2 + threadIdx.x;`
 
 **Explanation:**  
 Each thread block processes 2 * blockDim.x consecutive elements that form two sections.
+
 ---
 
 ### 4. Threads Needed in Grid
@@ -47,7 +48,7 @@ For a vector addition, assume that the vector length is 8000, each thread calcul
 
 - (A) 8000
 - (B) 8196
-- **✅ (C) 8192**
+- **(C) 8192**
 - (D) 8200
 
 **Explanation:**  
@@ -62,7 +63,7 @@ If we want to allocate an array of `v` integer elements in the CUDA device globa
 - (A) `n`
 - (B) `v`
 - (C) `n * sizeof(int)`
-- **✅ (D) `v * sizeof(int)`**
+- **(D) `v * sizeof(int)`**
 
 **Explanation:**  
 `cudaMalloc(&ptr, size_in_bytes);`  
@@ -76,7 +77,7 @@ If we want to allocate an array of `n` floating-point elements and have a floati
 - (A) `n`
 - (B) `(void*) A_d`
 - (C) `*A_d`
-- **✅ (D) `(void**) &A_d`**
+- **(D) `(void**) &A_d`**
 
 **Explanation:**  
 `cudaMalloc` needs the **address of the pointer** (so it can modify it to point to GPU memory). That’s why we pass `(void**)&A_d`.
@@ -88,7 +89,7 @@ If we want to copy 3000 bytes of data from host array `A_h` (pointer to element 
 
 - (A) `cudaMemcpy(3000, A_h, A_d, cudaMemcpyHostToDevice);`
 - (B) `cudaMemcpy(A_h, A_d, 3000, cudaMemcpyDeviceToHost);`
-- **✅ (C) `cudaMemcpy(A_d, A_h, 3000, cudaMemcpyHostToDevice);`**
+- **(C) `cudaMemcpy(A_d, A_h, 3000, cudaMemcpyHostToDevice);`**
 - (D) `cudaMemcpy(3000, A_d, A_h, cudaMemcpyHostToDevice);`
 
 **Explanation:**  
@@ -102,7 +103,7 @@ How would one declare a variable `err` that can appropriately receive the return
 
 - (A) `int err;`
 - (B) `cudaError err;`
-- **✅ (C) `cudaError_t err;`**
+- **(C) `cudaError_t err;`**
 - (D) `cudaSuccess_t err;`
 
 **Explanation:**  
@@ -147,7 +148,7 @@ __200,000__ ( because i < N )
 
 ### Exercise 10
 
-The intern can avoid duplication by
+The intern can avoid duplication by declaring with
 ```
 __host__ __device__ 
 ```
