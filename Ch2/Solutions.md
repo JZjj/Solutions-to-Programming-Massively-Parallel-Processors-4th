@@ -133,14 +133,14 @@ __128__
 
 b. What is the number of threads in the grid?
 
-__floor( ( 200000 + 128 - 1 ) / 128 ) * 128 = 200,064__
+__floor( ( 200000 + 128 - 1 ) / 128 ) * 128 = 200,192__
 
 c. What is the number of blocks in the grid?
-__1563__
+__1564__
 
 d. What is the number of threads that execute the code on line 02?
 
-__200,064__
+__200,192__
 
 e. What is the number of threads that execute the code on line 04?
 
