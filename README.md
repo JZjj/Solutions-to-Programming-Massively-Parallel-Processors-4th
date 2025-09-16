@@ -8,7 +8,7 @@ The goal is to **learn CUDA, GPU architecture, and parallel programming** step b
 ---
 
 ## 📚 Table of Contents
-- [Chapter 2 — Heterogeneous Data Parallel Computing](#chapter-2-heterogeneous-data-parallel-computing)
+- [Chapter 2 — Heterogeneous Data Parallel Computing](Ch2/Solutions.md)
 - [Chapter 3 — Multidimensional Grids and Data](#chapter-3-multidimensional-grids-and-data)
 *(More chapters coming soon...)*
 
